@@ -10,10 +10,31 @@ class Pokemon extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.fetchPokemonDetails()
+    }
+
+    fetchPokemonDetails()
+    {
+        // URL
+        const url = "https://pokeapi.co/api/v2/pokemon/" + this.props.name;
+
+        // Request
+        fetch(url).then(res => {
+            return res.json()
+        }).then(data => {
+            this.setState({
+                name: data.name
+            });
+        });
+    }
+
     render()
     {
         return (
-            <div>Hello</div>
+            <div className="card p-4 m-2">
+                <h1>{this.state.name}</h1>
+            </div>
         )
     }
 }

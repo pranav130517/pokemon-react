@@ -9,7 +9,7 @@ function App() {
         <div className="row m-0">
               <Pokemon name="pikachu" />
               <Pokemon name="charizard" />
-
+              <Pokemon name="pichu" />
         </div>
     </div>
   );
