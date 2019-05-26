@@ -6,7 +6,7 @@ class Pokemon extends React.Component {
         super(props);
         this.state = {
             name: '',
-            type: ''
+            types: ''
         }
     }
 
@@ -24,7 +24,8 @@ class Pokemon extends React.Component {
             return res.json()
         }).then(data => {
             this.setState({
-                name: data.name
+                name: data.name,
+                types: data.types
             });
         });
     }
@@ -34,6 +35,12 @@ class Pokemon extends React.Component {
         return (
             <div className="card p-4 m-2">
                 <h1>{this.state.name}</h1>
+                {
+                    this.state.types ?
+                    this.state.types.map(function(type) {
+                        return <li>{type.type.name} </li>
+                     }) : null
+                }
             </div>
         )
     }
