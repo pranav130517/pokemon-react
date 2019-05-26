@@ -7,13 +7,9 @@ function App() {
   return (
     <div className="App">
         <div className="row m-0">
-              <Pokemon
-                  icon={image}
-                  name="Pikachu"
-                  type="electric"
-              />
-              <Pokemon name="Pichu" type="electric" />
-              <Pokemon name="Raichu" type="electric" />
+              <Pokemon name="pikachu" />
+              <Pokemon name="charizard" />
+
         </div>
     </div>
   );
